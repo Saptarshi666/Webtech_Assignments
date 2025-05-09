@@ -1,0 +1,21 @@
+ .table-group{
+    position: absolute;
+    top: 505px;
+    left:400px;
+    width:550px;
+    display: flex;
+    justify-content: center; 
+ }
+ table {
+    margin: 0 auto; 
+}
+
+ .Text1{
+    position: absolute;
+    top: 445px;
+    font-size: x-large;
+    margin-bottom: 40px;
+    text-align: center;
+    left:540px  
+ }
+ 

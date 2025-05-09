@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type = "text/css" href="/static/style.css">
+<link rel="shortcut icon" href="#">
+</head>
+<body>
+
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/accessibility.js"></script>
+<p id = "Text1"> Stock Search</p>
+<form id = "Search-form">
+    <div class = "search-container">
+      
+        <div class= "background-for-search-button">
+        <button type="button" class="search-button" onclick="SearchInput()"></button>
+        </div>
+        <input  required type = "text" class = "search-bar" placeholder="Enter Stock Ticker Symbol" onkeydown="handleKeyPress(event)"  />
+    
+        <div class = "background-for-cancel-button">
+            <button type = "button" class = "cancel-button" onclick="clearSearch()"></button>
+        </div>
+    </div>
+</form>
+
+<div class=" wrapper">
+    <div class = "tab">
+        <button type = "tablinks" class="company-button" onclick="populateCompany()">Company</button>
+        <button type = "tablinks" class="stocksummary-button" onclick="populateStock()">Stock Summary</Summary></button>
+        <button type = "tablinks" class="charts-button" onclick="populateChart()">Charts</button>
+        <button type = "tablinks" class="latestnews-button" onclick="populateNews()">Latest News</button>
+    </div>
+    <div class = "Imagecomp">
+<img id = "CompImage">
+    </div>
+    <div class = "Table">
+    <table class="Table1">
+        <tr>
+            <td id = "tablecell1"> Company Name</td>
+            <td id = "tablecell2"></td>
+        </tr>
+        <tr>
+            <td id = "tablecell3"> Stock Ticker Symbol</td>
+            <td id = "tablecell4"></td>
+        </tr>
+        <tr>
+            <td id = "tablecell5"> Stock Exchange Code</td>
+            <td id = "tablecell6"></td>
+        </tr>
+        <tr>
+            <td id = "tablecell7"> Company Start Date</td>
+            <td id = "tablecell8"></td>
+        </tr>
+        <tr>
+            <td id = "tablecell9"> Category</td>
+            <td id = "tablecell10"></td>
+        </tr>
+    </table>
+    </div>
+    <div class = "StockTable">
+    <table class="Table2">
+        <tr>
+            <td id = "tablecell11" > Stock Ticker Symbol</td>
+            <td id = "tablecell12"></td>
+        </tr>
+        <tr>
+            <td id = "tablecell13"> Trading Day</td>
+            <td id = "tablecell14"></td>
+        </tr>
+        <tr>
+            <td id = "tablecell15"> Previous Closing Price</td>
+            <td id = "tablecell16"></td>
+        </tr>
+        <tr>
+            <td id = "tablecell17"> Opening Price</td>
+            <td id = "tablecell18"></td>
+        </tr>
+        <tr>
+            <td id = "tablecell19"> High Price</td>
+            <td id = "tablecell20"></td>
+        </tr>
+        <tr>
+            <td id = "tablecell21"> Low Price</td>
+            <td id = "tablecell22"></td>
+        </tr>
+        <tr>
+            <td id = "tablecell23"> Change</td>
+            <td id = "tablecell24"></td>
+        </tr>
+        <tr>
+            <td id = "tablecell25"> Change Percent</td>
+            <td id = "tablecell26"></td>
+        </tr>
+    </table>
+    <div class = "RecomTable">
+    <table class = "Table3">
+        <tr>
+            <td id = "tablecell27" ></td>
+            <td id = "tablecell28"></td>
+            <td id = "tablecell29" ></td>
+            <td id = "tablecell30"></td>
+            <td id = "tablecell31" ></td>
+        </tr>
+    </table>
+</div>
+    <p id = "Text2"> Strong Sell</p>
+<p id = "Text3"> Strong Buy</p>
+<p id = "Text4"> Recommendation Trends</p>
+    </div>
+    <div id = 'chartcontainer'>
+    </div>
+    <div class = "News">
+        <div class = "News1"></div>
+        <div class = "News2"></div>
+        <div class = "News3"></div>
+        <div class = "News4"></div>
+        <div class = "News5"></div>
+    </div>
+    <div class = "Error-container">
+        <p id = "Errortext">Error : No Record has been found, plese enter a valid symbol</p>
+    </div>
+</div>
+<script src = "/static/Myscript.js"></script>
+</body>
+</html>

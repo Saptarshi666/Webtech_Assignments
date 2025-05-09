@@ -1,0 +1,23 @@
+<div class= "summary" >
+  <!-- <H1> ITS ME MARIO</H1> -->
+<div class = "stockinfo" >
+      <span style="top:500px;position:absolute;left:195.823px"><b>High Price: </b> {{h}}</span>
+      <span style="top:530px;position:absolute;left:195.823px"><b>Low Price:</b> {{l}}</span>
+      <span style="top:560px;position:absolute;left:195.823px"><b>Open Price:</b> {{o}}</span>
+      <span style="top:590px;position:absolute;left:195.823px"><b>Prev. Price</b>: {{pc}}</span>
+  </div>
+  <div class = " companyinfo" >
+      <span style = "position: absolute; top: 700px; left: 330px;"><u><b> About the company</b></u></span>
+      <span style = "position: absolute; top: 780px; left: 330px;"><b>IPO Start Date:</b> {{ipo}}</span>
+      <span style = "position: absolute; top: 810px; left: 350px;"><b>Industry:</b> {{finnhubIndustry}}</span>
+      <span style = "position: absolute; top: 840px; left: 310px;"><b>Webpage:</b> <a [href]="weburl" target="_blank">{{weburl}}</a></span>
+      <span style = "position: absolute; top: 870px; left: 350px;"><b>Company Peers:</b></span>
+      <div class="peersinfo" style = "position: absolute; top: 900px; left: 200px;width:500px">
+      <span *ngFor="let item of peers" >
+        <a  routerLink="/search/{{ item }}" (click) = "onItemClick(item)">{{ item }}</a>
+        <span> , </span>
+      </span>
+    </div>
+    </div>
+ <div id="line-chart-container" class = "chart" style="position: absolute;top: 620px;width: 430px;left:690px;height: 300px;"></div> 
+</div>

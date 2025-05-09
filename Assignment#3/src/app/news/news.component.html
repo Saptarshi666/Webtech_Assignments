@@ -1,0 +1,69 @@
+<div class = "generalnewscontainer" *ngIf="isNewsAvailable">
+<div #NewsDiv class="News">
+    <div class="NewsRow">
+      <div class="News1" *ngIf="isNewsAvailable1" (click) = "ExpandNews(newsModal,0)"><img [src]="news[0]?.image" alt="Image 1"><p class="NewsText">{{ news[0]?.headline }}</p></div>
+      <div class="News2" *ngIf="isNewsAvailable2"(click) = "ExpandNews(newsModal,1)"><img [src]="news[1]?.image" alt="Image 2"><p class="NewsText">{{ news[1]?.headline }}</p></div>
+    </div>
+    <div class="NewsRow">
+      <div class="News3" *ngIf="isNewsAvailable3"(click) = "ExpandNews(newsModal,2)"><img [src]="news[2]?.image" alt="Image 3"><p class="NewsText">{{ news[2]?.headline }}</p></div>
+      <div class="News4" *ngIf="isNewsAvailable4"(click) = "ExpandNews(newsModal,3)"><img [src]="news[3]?.image" alt="Image 4"><p class="NewsText">{{ news[3]?.headline }}</p></div>
+    </div>
+    <div class="NewsRow">
+        <div class="News5" *ngIf="isNewsAvailable5"(click) = "ExpandNews(newsModal,4)"><img [src]="news[4]?.image" alt="Image 5"><p class="NewsText">{{ news[4]?.headline }}</p></div>
+        <div class="News6" *ngIf="isNewsAvailable6"(click) = "ExpandNews(newsModal,5)"><img [src]="news[5]?.image" alt="Image 6"><p class="NewsText">{{ news[5]?.headline }}</p></div>
+      </div>
+      <div class="NewsRow">
+        <div class="News7" *ngIf="isNewsAvailable7"(click) = "ExpandNews(newsModal,6)"><img [src]="news[6]?.image" alt="Image 7"><p class="NewsText">{{ news[6]?.headline }}</p></div>
+        <div class="News8" *ngIf="isNewsAvailable8"(click) = "ExpandNews(newsModal,7)"><img [src]="news[7]?.image" alt="Image 8"><p class="NewsText">{{ news[7]?.headline }}</p></div>
+      </div>
+      <div class="NewsRow">
+        <div class="News9" *ngIf="isNewsAvailable9"(click) = "ExpandNews(newsModal,8)"><img [src]="news[8]?.image" alt="Image 9"><p class="NewsText">{{ news[8]?.headline }}</p></div>
+        <div class="News10" *ngIf="isNewsAvailable10"(click) = "ExpandNews(newsModal,9)"><img [src]="news[9]?.image" alt="Image 10"><p class="NewsText">{{ news[9]?.headline }}</p></div>
+      </div>
+      <div class="NewsRow">
+        <div class="News11" *ngIf="isNewsAvailable11"(click) = "ExpandNews(newsModal,10)"><img [src]="news[10]?.image" alt="Image 11"><p class="NewsText">{{ news[10]?.headline }}</p></div>
+        <div class="News12" *ngIf="isNewsAvailable12" (click) = "ExpandNews(newsModal,11)"><img [src]="news[11]?.image" alt="Image 12"><p class="NewsText">{{ news[11]?.headline }}</p></div>
+      </div>
+      <div class="NewsRow">
+        <div class="News13" *ngIf="isNewsAvailable13"(click) = "ExpandNews(newsModal,12)"><img [src]="news[12]?.image" alt="Image 13"><p class="NewsText">{{ news[12]?.headline }}</p></div>
+        <div class="News14" *ngIf="isNewsAvailable14"(click) = "ExpandNews(newsModal,13)"><img [src]="news[13]?.image" alt="Image 14"><p class="NewsText">{{ news[13]?.headline }}</p></div>
+      </div>
+      <div class="NewsRow">
+        <div class="News15" *ngIf="isNewsAvailable15"(click) = "ExpandNews(newsModal,14)"><img [src]="news[14]?.image" alt="Image 15"><p class="NewsText">{{ news[14]?.headline }}</p></div>
+        <div class="News16" *ngIf="isNewsAvailable16"(click) = "ExpandNews(newsModal,15)"><img [src]="news[15]?.image" alt="Image 16"><p class="NewsText">{{ news[15]?.headline }}</p></div>
+      </div>
+      <div class="NewsRow">
+        <div class="News17" *ngIf="isNewsAvailable17"(click) = "ExpandNews(newsModal,16)"><img [src]="news[16]?.image" alt="Image 17"><p class="NewsText">{{ news[16]?.headline }}</p></div>
+        <div class="News18" *ngIf="isNewsAvailable18" (click) = "ExpandNews(newsModal,17)"><img [src]="news[17]?.image" alt="Image 18"><p class="NewsText">{{ news[17]?.headline }}</p></div>
+      </div>
+      <div class="NewsRow">
+        <div class="News19" *ngIf="isNewsAvailable19" (click) = "ExpandNews(newsModal,18)"><img [src]="news[18]?.image" alt="Image 19"><p class="NewsText">{{ news[18]?.headline }}</p></div>
+        <div class="News20" *ngIf="isNewsAvailable20" (click) = "ExpandNews(newsModal,19)"><img [src]="news[19]?.image" alt="Image 20"><p class="NewsText">{{ news[19]?.headline }}</p></div>
+      </div>
+</div>
+<ng-template #newsModal let-modal >
+  <div class="modal-header" style =" display: flex;flex-direction: column;align-items: flex-start;">
+   <div style="font-weight: bold; font-size: 24px;">{{ source }}</div>
+    <div>{{ datetime }}</div>
+    <button type="button" class="close-btn" aria-label="Close" (click)="modal.dismiss()">
+     <span aria-hidden="true">&times;</span>
+      <div class="close-line"></div>
+    </button>
+  </div>
+  <div class="modal-body">
+    <span  class="title" >{{title}}</span>
+    <br>
+    <span class = "Summary"> {{Summary}}</span>
+    <br>
+    <span> For more details click <a [href]="weburl" target="_blank"> here </a></span>
+  </div>
+  <div class="modal-footer"  style =" display: flex;flex-direction: column;align-items: flex-start;border: 1px solid grey; padding: 10px; margin: 20px; border-radius: 5px;">
+    <span> Share</span>
+    <div>
+    <i class="fa-brands fa-x-twitter" style=" font-size: 24px;" (click)="shareOnTwitter()"></i>
+    <i class="fab fa-facebook-square" style="color: #1178f2;font-size: 24px;" (click)="shareOnFacebook()"></i>
+  </div>
+  </div>
+</ng-template>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">

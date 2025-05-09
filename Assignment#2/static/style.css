@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css?family=Open Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Work Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Libre Franklin&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+body{
+    background-image: url('Images/img/back.svg');
+    background-size: cover;
+    height: 38vh;
+    background-position-x: -300px;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.wrapper{
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: auto;
+  
+}
+
+.company-button:active{
+  background-color: #ccc;
+}
+.search-container {
+  position: relative;
+    display: flex;
+    margin-top: -60px;
+    margin-left: 300px;
+  }
+
+  .search-bar {
+    padding: 10px;
+    font-size: 13px;
+    border-left: none;
+    border-right:1px solid #ccc;
+    border-top:1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-radius:0 0 0 0;
+    outline: none;
+    width: 500px;
+  }
+  .background-for-search-button{
+    background-color: white;
+    height:50 ;
+    border-top:1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left:1px solid #ccc;
+    border-radius: 12px 0 0 12px;
+    width:35px;
+  }
+  .search-button {
+    width:30px;
+    height:4px;
+    padding: 6px;
+    background-image: url('Images/img/search-solid.svg'); 
+    filter: grayscale(100%);
+    background-color: white;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    outline: none;
+    box-shadow: none;
+    margin-top:11px;
+    margin-left: 15px;
+    border:none;
+    opacity: 0.25;
+    cursor: pointer;
+  }
+  .search-button:hover{
+    opacity: 1;
+  }
+  .background-for-cancel-button{
+    background-color: white;
+    height:50 ;
+    border-top:1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-right:1px solid #ccc;
+    border-radius: 0 12px 12px 0;
+    width:35px;
+  }
+  .cancel-button{
+    width:5px;
+    height:5px;
+    padding: 7px;
+    background-image: url('Images/img/times-solid.svg'); 
+    background-color: white;
+    border-radius: 0px;
+    background-repeat: no-repeat;
+    outline: none;
+    box-shadow: none;
+    margin-top:12px;
+    margin-left: 12px;
+    border:none;
+    opacity: 0.25;
+    cursor: pointer;
+  }
+  .cancel-button:hover{
+    opacity: 1;
+  }
+  #Text1{
+    position: absolute;
+    font-family: 'Open Sans',sans-serif;
+    margin-top: -140px;
+    margin-left: -130px;
+    font-size: larger;
+  }
+  .tab{
+
+    margin-top: 600px;
+    margin-left: -980px;
+    overflow: hidden;
+    border: 1px  #ccc;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 0;
+    width: 960px;
+    position: relative;
+    visibility: hidden;
+
+  }
+  .tab button{
+    background-color: inherit;
+    float: left;
+    border:none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-family: 'Roboto',sans-serif;
+    
+  }
+  .tab button:first-child{
+    margin-left: -570px;    
+  }
+  .tab button:nth-child(2){
+    margin-left: -1140px; 
+  }
+  .tab button:nth-child(3){
+    margin-left: -1140px;
+  }
+  .tab button:nth-child(4){
+    margin-left: -1140px;
+  }
+  .tab button:hover{
+    background-color: #dddddd;
+  }
+  .tab button:active{
+    background-color: #ccc;
+  }
+  .Table{
+    margin-top: 50px;
+    margin-left: -720px;
+    visibility: hidden;
+  }
+  .News{
+    position:absolute;
+    top:340px;
+    margin-left: -980px;
+    height:900px;
+    width:960px;
+    visibility: hidden;
+  }
+  .News1{
+    position: absolute;
+    top:25px;
+    font-family: 'Roboto',sans-serif;
+    background-color: #f5f5f5;
+    height: 120px;
+    width:960px;
+    word-wrap:break-word;
+    visibility: hidden;
+    
+  }
+  .News2{
+    position: absolute;
+    top:180px;
+    font-family: 'Roboto',sans-serif;
+    background-color: #f5f5f5;
+    height: 120px;
+    width:960px;
+    word-wrap: break-word;
+    visibility: hidden;
+  }
+  .News3{
+    position: absolute;
+    top:340px;
+    font-family: 'Roboto',sans-serif;
+    background-color: #f5f5f5;
+    height: 120px;
+    width:960px;
+    word-wrap: break-word;
+    visibility: hidden;
+  }
+  .News4{
+    position: absolute;
+    top:500px;
+    font-family: 'Roboto',sans-serif;
+    background-color: #f5f5f5;
+    height: 120px;
+    width:960px;
+    word-wrap: break-word;
+    visibility: hidden;
+  }
+  .News5{
+    position: absolute;
+    font-family: 'Roboto',sans-serif;
+    top:660px;
+    background-color: #f5f5f5;
+    height: 120px;
+    width:960px;
+    word-wrap: break-word;
+    visibility: hidden;
+  }
+  .Table{
+    margin-top:15px;
+  }
+  .Table1,.Table2{
+    font-family: 'Roboto',sans-serif;
+    font-weight: bold;
+    font-size:12px;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid lightgray;
+    border-collapse: collapse;
+  }
+ 
+  .RecomTable{
+    position: absolute;
+    top:235px;
+    margin-left: 115px;
+  }
+  .Table3{
+    font-family: 'Roboto',sans-serif;
+    border-collapse: collapse;
+    height: 30px;
+    width: 110px;
+  }
+
+  td{
+    border-top: 1px solid lightgray;
+  }
+  #tablecell1,#tablecell3,#tablecell5,#tablecell7,#tablecell9{
+    width: 250px;
+    text-align: right;
+    padding: 5px;
+    font-size: 15px;
+    letter-spacing: -0.5px;
+  }
+  #tablecell2,#tablecell4,#tablecell6,#tablecell8,#tablecell10{
+    text-align: left;
+    width: 250px;
+    font-weight: normal;
+    padding: 5px;
+    font-size: 15px;
+    letter-spacing: -0.5px;
+  }
+  #tablecell11,#tablecell13,#tablecell15,#tablecell17,#tablecell19,#tablecell21,#tablecell23,#tablecell25{
+    width: 150px;
+    text-align: right;
+    padding: 5px;
+    font-size: 14px;
+  }
+  #tablecell12,#tablecell14,#tablecell16,#tablecell18,#tablecell20, #tablecell22,#tablecell24,#tablecell26{
+    text-align: left;
+    width: 90px;
+    font-weight: normal;
+    padding: 5px;
+    font-size: 14px;
+  }
+  #tablecell27,#tablecell28, #tablecell29,#tablecell30,#tablecell31{
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #tablecell27{
+    background-color: #eb2837;
+    color: white;
+    width:30px;
+    padding: 4px;
+    border:none
+  }
+  #tablecell28{
+    background-color: #af5f46;
+    color: white;
+    width:30px;
+    padding: 4px;
+    border:none
+  }
+  #tablecell29{
+    background-color:#73915a ;
+    color: white;
+    width:30px;
+    padding: 5px;
+    border:none
+  }
+  #tablecell30{
+    background-color:#37c869 ;
+    color: white;
+    width:30px;
+    padding: 5px;
+    border:none
+  }
+  #tablecell31{
+    background-color:#01ff7d ;
+    color: white;
+    width:30px;
+    border:none;
+    padding: 5px;
+  }
+ .Imagecomp{
+margin-top: 30px;
+margin-left: -500px;
+visibility: hidden;
+ }
+
+ .StockTable{
+  position: absolute;
+  visibility: hidden;
+  top: 315px;
+  margin-left: -700px;
+  
+}
+#chartcontainer{
+  position: absolute;
+  top: 360px;
+  height:850px;
+  width:850px;
+  margin-left: -930px;
+  visibility: hidden;
+}
+
+ #Text2{
+  position:absolute;
+  color: #be7379;
+  top: 222px;
+  margin-left: 78px;
+  font-family: 'Roboto',sans-serif;
+  font-size: 11px;
+  width: 25px;
+  text-align: center;
+ }
+ #Text3{
+  position:absolute;
+  color: #89c397;
+  top: 222px;
+  margin-left: 240px;
+  font-family: 'Roboto',sans-serif;
+  font-size: 11px;
+  width: 25px;
+  text-align: center;
+ }
+ #Text4{
+  position: absolute;
+  top: 265px;
+  font-size: 13px;
+  margin-left: 90px;
+  font-family: 'Roboto',sans-serif;
+ }
+ .Error-container {
+  position: absolute;
+    display: flex;
+    margin-top: -250px;
+    margin-left:-700px;
+    width: 580px;
+    height:41px;
+    background-color: #e6e6e6;
+    border-radius: 12px 12px 12px 12px;
+    visibility: hidden;
+  }
+  #Errortext{
+    font-family: 'Roboto',sans-serif;
+    margin-left: 100px;
+    margin-top: 12px;
+    font-size: 14px;
+  }
+ /* .Table3{
+  margin-top: 40px;
+ } */
+ 

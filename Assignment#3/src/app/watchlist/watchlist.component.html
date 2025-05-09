@@ -1,0 +1,21 @@
+<h2 style="position:absolute;top:70px;left: 250px;"> My Watchlist</h2>
+<mat-option *ngIf="!isDataLoaded" class="spinner-option">
+  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+</mat-option>
+<div *ngIf="showAlert" [ngClass]="{'alert': colorofalert}">
+  <p style="text-align: center;">Currently you don't have any stocker in your watchlist.</p>
+</div>
+<!-- <div class= "watchlistitems" #watchlistitems></div> -->
+<div class="container" style="display: flex; flex-direction: column;">
+<div *ngFor="let item of storedResponses; let i = index"  [style.top.px]="i === 0 ? 190 : (190 + i * 120 + 10)" class="centered-div"  (click)="handleDivClick(i)">
+  <p style="font-size: x-large;padding-left: 12px;padding-top: 25px;font-weight: 500;">{{ item.stockData.ticker }}</p>
+  <p style="font-size: large;padding-top: 65px;font-weight: 500;position: absolute;left: 12px;">{{item.stockData.name}}</p>
+  <p [ngStyle]="{'color': item.profileData.d < 0 ? 'red' : (item.profileData.d > 0 ? 'green' : 'black')}" style="position: absolute;top:25px;left: 370px;font-size: x-large ;font-weight: 500;">{{ item.profileData.c | number: '1.2-2' }}</p>
+  <p [ngStyle]="{'color': item.profileData.d < 0 ? 'red' : (item.profileData.d > 0 ? 'green' : 'black')}" style="position: absolute;top:65px;left: 370px;font-size: large ;font-weight: 500;">{{ item.profileData.dp | number: '1.2-2' }}</p>
+  <img *ngIf="item.profileData.d > 0" src="/assets/Images/img/caretup.svg" style="width:20px;margin-left: 350px;margin-top: 50px;" alt="Positive Image">
+  <img *ngIf="item.profileData.d < 0" src="/assets/Images/img/caretdown.svg" style="width:20px;margin-left: 350px;margin-top: 50px;"  alt="Negative Image">
+  <p [ngStyle]="{'color': item.profileData.d  < 0 ? 'red' : (item.profileData.d > 0 ? 'green' : 'black')}" style="position: absolute;top:65px;left: 440px;font-size: large ;font-weight: 500;">({{ item.profileData.d | number: '1.2-2' }})%</p>
+  <button class="close-button" (click)="removeDiv(i)">×</button>
+</div>
+</div>
+

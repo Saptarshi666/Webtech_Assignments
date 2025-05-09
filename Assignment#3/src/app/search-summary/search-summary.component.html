@@ -1,0 +1,125 @@
+<app-stock-search (searchEvent) = "onSearch($event)" ></app-stock-search>
+<div class="search-summary" *ngIf="noerror">
+  <mat-option *ngIf="!isDataLoaded && searchcalled" class="spinner-option">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </mat-option>
+  <div *ngIf="showAlert" [ngClass]="{'alert': colorofalert, 'alert1': !colorofalert}">
+    {{ alertMessage }}
+    <button type="button" class="btn-close" aria-label="Close" (click) = "closeAlert()"></button>
+  </div>
+  <div class = "generalcontainer"  *ngIf="isDataLoaded">
+    <div class="ticker-container">
+      <span class="ticker">{{ ticker }}</span>
+      <button class="ticker-button" *ngIf="isDataLoaded" (click)="makeYellow()">
+        <img [src]="starimageurl">
+        <div class="yellow-overlay" *ngIf="isStarYellow"></div>
+      </button>
+    </div>
+    
+    <div class="company-container">
+        <span class="company">{{ name }}</span>
+      </div>
+      <div class="exchange-container">
+        <span class="exchange">{{ exchange }}</span>
+      </div>
+      <div *ngIf="isDataLoaded" [ngClass]="{'condition-true': isConditionTrue, 'condition-false': !isConditionTrue}">
+        <button class="button1" (click)="openBuyModal(buyModalContent)">Buy</button>
+        <button class="button2" (click)="openSellModal(buySellContent)">Sell</button>
+      </div>
+    </div>
+  
+<ng-template #buyModalContent let-modal>
+  <div class="modal-header">
+    <span >{{ ticker }}</span>
+    <button type="button" class="close-btn" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+      <div class="close-line"></div>
+    </button>
+  </div>
+  <div class="modal-body">
+    <span>Current Price: {{c}}</span>
+    <br>
+    <span> Money in Wallet: ${{totalmoney}}</span>
+    <div class="form-group" style="display:flex; flex-direction: row;" >
+      <label for="userInput"  class="col-sm-3 col-form-label">Quantity:</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="userInput" [(ngModel)]="userInputValue" (input)="checkWallet()">
+      </div>
+    </div>
+    <div class = "errortext" *ngIf="isNotEnoughMoney">Not enough money in the wallet</div>
+  </div>
+  <div class="modal-footer">
+    <!-- Modal footer buttons or actions go here -->
+    <span class ="money"> Total: {{amountbought}}</span>
+    <button type="button" [ngClass]="{'grayedout': isButtonDisabled, 'Buybutton': !isButtonDisabled}" [disabled]="isButtonDisabled" (click) ="BuyNow(userInputValue)">Buy</button>
+  </div>
+</ng-template>
+<ng-template #buySellContent let-modal>
+  <div class="modal-header">
+    <span >{{ ticker }}</span>
+    <button type="button" class="close-btn" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+      <div class="close-line"></div>
+    </button>
+  </div>
+  <div class="modal-body">
+    <span>Current Price: {{c}}</span>
+    <br>
+    <span> Money in Wallet: ${{totalmoney}}</span>
+    <div class="form-group" style="display:flex; flex-direction: row;" >
+      <label for="userInput"  class="col-sm-3 col-form-label">Quantity:</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="userInput1" [(ngModel)]="userInputValue1" (input)="checkWallet1()">
+      </div>
+    </div>
+    <div class = "errortext" *ngIf="isNotEnoughStocks">You cannot sell the stocks you don't have!</div>
+  </div>
+  <div class="modal-footer">
+    <!-- Modal footer buttons or actions go here -->
+    <span class ="money"> Total: {{amountsold}}</span>
+    <button type="button" [ngClass]="{'grayedout': isButtonDisabled, 'Buybutton': !isButtonDisabled}" [disabled]="isButtonDisabled" (click) ="SellNow(userInputValue1)">Sell</button>
+  </div>
+</ng-template>
+    <div class="image-container"  *ngIf="isDataLoaded">
+      <img [src]="imageUrl" class="centered-image">
+    </div>
+    <div class = "generalcontainer1" *ngIf="isDataLoaded">
+      <div [style.color] = "fontColor" class = "lastprice">
+        <span class="curprice">{{ c }}</span>
+      </div>
+      <div class = "change"  [style.color] = "fontColor">
+      <img [src]="changeurl">
+      <span>{{d}} ({{dp}}%)</span>
+      </div>
+      <div class = "time">
+        <span>{{tstring}}</span>
+      </div>
+    </div>
+    <div class = "Marketstatus"  *ngIf="isDataLoaded">
+      <span [style.color] = "fontColor1"  >{{ marketstatusmessage }}</span>
+    </div>
+    
+    <div class ="tabs"  >
+    <mat-tab-group *ngIf="isDataLoaded" mat-stretch-tabs mat-align-tab="center">
+      <mat-tab label = "Summary">
+        <ng-template matTabContent>
+          <app-summary (itemClicked) = "onSearch($event)" ></app-summary> 
+    </ng-template>
+  </mat-tab>
+      <mat-tab label="Top News" >
+        <app-news  ></app-news> 
+    </mat-tab>
+      <mat-tab label="Charts"> 
+      <ng-template matTabContent>
+        <app-charts ></app-charts> 
+      </ng-template>
+      </mat-tab>
+      <mat-tab label="Insights"> 
+        <ng-template matTabContent>
+        <app-insights ></app-insights>
+      </ng-template>
+      </mat-tab> 
+    </mat-tab-group>
+  </div>
+  </div>
+

@@ -1,0 +1,311 @@
+.search-summary{
+  position: relative;
+}
+.image-container {
+    position: relative; 
+    margin-top: 30px; 
+    height: 100px; 
+  }
+  .Marketstatus{
+    position: absolute;
+    font-weight: bold;
+    font-size: 10px;
+    top:60px
+  }
+  .change{
+    font-size: 21px;
+  }
+  .time{
+    font-size: 13px;
+  }
+  .generalcontainer1{
+    position: absolute;
+    top: calc(50% - 56px);
+    right: calc(50% - 530px);
+    transform: translateX(-100%);
+    white-space: nowrap;
+  }
+  .general-container{
+    position: relative;
+  }
+  .centered-image {
+    position: absolute; 
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); 
+    max-width: 100px;
+    height: 100px;
+  }
+  
+.search-summary {
+    position: relative; 
+    text-align: center; 
+  }
+  .ticker-button{
+    border: none; 
+    outline: none;
+    background-color: white;
+    border-radius: 5px; 
+    top:-10px;
+    height: 20px; 
+    width: 25px; 
+    overflow: hidden; 
+    position: relative; 
+  }
+
+  .ticker-button img {
+    position: absolute;
+    top: 0px; 
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  ::ng-deep .mat-mdc-tab-body-wrapper
+  {
+    height: 1000px;
+  }
+  ::ng-deep mat-tab-body
+  {
+    margin-top: -440px;
+    margin-left:-140px
+  }
+  .lastprice{
+    font-size: 26px;
+    font-weight: bold;
+  }
+  .ticker-button:hover {
+    border: 1px solid #000; 
+  }
+  .ticker-container, .company-container, .exchange-container {
+    margin: 5px; 
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+  }
+  .ticker-container {
+    position: absolute;
+    top: calc(50% - 56px);
+    left: calc(50% - 270px);
+    transform: translateX(-100%);
+    white-space: nowrap;
+    font-size: 26px;
+    justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  }
+  .yellow-background {
+    background-color: yellow;
+  }
+  .company-container{
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 260px);
+    transform: translateX(-100%);
+    white-space: nowrap;
+    font-size: 21px;
+    color: #6e788c;
+  }
+.exchange-container{
+    position: absolute;
+    top: calc(50% + 16px);
+    left: calc(50% - 200px);
+    transform: translateX(-100%);
+    white-space: nowrap;
+    font-size: 13px;
+  }
+  .condition-false{
+    position: absolute;
+    top: calc(50% + 45px);
+    left: calc(50% - 330px);
+  }
+  .button1{
+    border-radius: 5px;
+    background-color:#157447;
+    color: white;
+    width: 50px;
+    border: 1px solid #157447;
+  }
+  
+  .button2 {
+    display: none; 
+    background-color: #dd3545;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  
+  .condition-true .button1 {
+    position: absolute;
+    top: calc(50% + 45px);
+    left: calc(50% - 355px);
+    border-radius: 5px;
+    background-color:#157447;
+    color: white;
+    width: 50px;
+  }
+  .button1:hover{
+    border: 3px solid #99c7b4;
+  }
+  .alert {
+    position:absolute;
+    padding: 10px;
+    background-color: #d2e7de; 
+    color: black;
+    margin-bottom: 45px;
+    margin-left: -220px;
+    width: 850px;
+  }
+  .alert1 {
+    position:absolute;
+    padding: 10px;
+    background-color: #f7d7da; 
+    color: black;
+    margin-bottom: 45px;
+    margin-left: -220px;
+    width: 850px;
+  }
+  .move-down {
+    transform: translateY(110px); 
+  }
+  .move-down1 {
+    transform: translateY(60px); 
+  }
+  .move-down2{
+    transform: translateY(65px);
+  }
+ 
+  .condition-true .button2 {
+    display: block;
+    position: absolute;
+    top: calc(50% + 45px);
+    left: calc(50% - 290px);
+    width:50px;
+    border: 1px solid #dd3545;
+  }
+  
+  
+  .condition-true  {
+    justify-content: center;
+  }
+.btn-close{
+  position: absolute;
+  margin-left:300px
+}
+.close-btn {
+  background-color: transparent; /* No background color */
+  border: none;
+  color: blue; /* Blue color for the close button */
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.close-line {
+  width: 100%;
+  height: 2px;
+  background-color: blue; /* Blue color for the horizontal line */
+}
+.errortext{
+  color: #c45759;
+  font-size: smaller;
+}
+.Buybutton{
+  background-color:#157447;
+  color: white;
+  border:none;
+  border-radius: 5px;
+}
+.grayedout{
+  background-color:#157447;
+  color: white;
+  border:none;
+  border-radius: 5px;
+  opacity: 0.5;
+}
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.Marketstatus{
+  position: relative;
+  top:60px;
+}
+.money {
+  margin-left: 0;
+}
+.chart{
+  position: absolute;
+  top: calc(50%+600px); 
+  left:calc(50%+600px);
+  width: 400px; 
+  height: 400px;
+  /* transform: translate(-50%, -50%); */
+}
+.tab{
+
+   margin-top: 80px;
+  margin-left:-300px; 
+  overflow: hidden;
+  border: 1px  #ccc;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 0;
+  width: 960px;
+  position: absolute;
+  color: #7fa1b0;
+
+}
+.tab button{
+  background-color: inherit;
+  float: left;
+  border:none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  text-align: center;
+  width: 240px;
+}
+.tab button:hover{
+  background-color: #e2e3f3;
+}
+.tab button:active{
+  border-bottom: 2px solid #828696 ;
+  color: #5e95b8;
+}
+ .stockinfo{
+  position: absolute;
+  top:280px;
+  left: -250px;
+
+}
+.tabs{
+  position: absolute;
+  margin-top:  100px;
+  width:980px;
+  margin-left:-296px
+}
+.mat-progress-spinner {
+  animation: spin 1s linear infinite; 
+}
+.spinner-option:hover {
+  background-color: transparent; 
+}
+.companyinfo{
+  position:absolute;
+  top:480px;
+  left:-200px
+}
+.generaltext{
+  font-size: larger;
+}
+.ipoinfo{
+  padding-top: 40px;
+}
+ 
+  
+  

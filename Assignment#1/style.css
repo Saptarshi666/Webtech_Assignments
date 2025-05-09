@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css?family=Roberto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=EB Garamond&display=swap');
+body, html, main{height:100%;}
+*{
+    padding: 0;
+    margin: 0;
+    border:0;
+    }
+header{
+    height: 50px;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    width:1239px;
+    padding-bottom: 30px;
+    }
+    header nav p{
+        display:flex;
+        margin-left: 10%;
+        margin-top: 2%;
+        color:#c3af7d;
+        font-family:'Roberto',sans-serif ;
+        font-weight: 513;
+        
+    }
+    header nav ul{
+    
+    display: flex;
+    margin-top: -1.5%;
+    margin-left: 45%;
+    list-style: none;
+    } 
+    header nav ul li{
+    padding-left: 10%;
+   
+    }
+    header nav ul li a{
+    font-family:'Roberto',sans-serif ;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    
+    }
+    header nav ul li a:hover{
+        color:#c3af7d;
+    }
+    .Container1 {
+        position: relative;
+        text-align: center;
+    }
+    .parallax-container {
+      position: relative;
+      width: 100vw;
+      height: 190vh; /* Height is set to 150% of viewport height */
+      overflow: hidden;
+    }
+
+    .parallax-image {
+      position: absolute;
+      top: -50px;
+      left: 0;
+      width: 1239px;
+      height: 1390px;
+      /* object-fit:cover; */
+    }
+       #Image2{
+        position:absolute;
+        margin-top: 100px;
+        margin-left: 60px;
+      } 
+      #Image3{
+      /*  position:absolute;*/
+        margin-top: 100px;
+        margin-left: 560px;
+        width: 600px;
+        height: 581px;
+      } 
+    #Text1{
+        position: absolute;
+        font-family: 'EB Garamond',sans-serif;
+        top: 500px;
+        left: 625px;
+        transform: translate(-50%, -50%);
+        color:white;
+        font-size: 45px;
+        width: 490px;
+        overflow-wrap: break-word; 
+        word-wrap: break-word; 
+        word-break: break-word;
+        letter-spacing: 14px;
+        line-height: 70px;
+        text-align: center;
+      }
+      #Text2{
+        position: absolute;
+        font-family: 'Roberto',sans-serif ;
+        top: 1325px;
+        left: 396px;
+        transform: translate(-50%, -50%);
+        color:white;
+        font-size: 25px;
+        width: 490px;
+        overflow-wrap: break-word; 
+        word-wrap: break-word; 
+        word-break: break-word;
+        letter-spacing: 17px;
+        line-height: 80px;
+      }
+      #Text3{
+        position: absolute;
+        font-family: 'EB Garamond',sans-serif;
+        top: 1505px;
+        left: 260px;
+        transform: translate(-50%, -50%);
+        color:white;
+        font-size: 19px;
+        font-weight:600;
+        width: 260px;
+        overflow-wrap: break-word; 
+        word-wrap: break-word; 
+        word-break: break-word;
+        letter-spacing: 4px;
+        line-height: 45px;
+        text-align: center;
+      }
+      #Text4{
+        position: absolute;
+        font-family: 'Roberto',sans-serif ;
+        top: 1650px;
+        left: 260px;
+        transform: translate(-50%, -50%);
+        color:white;
+        font-size: 15px;
+        font-weight:600;
+        width: 245px;
+        overflow-wrap: break-word; 
+        word-wrap: break-word; 
+        word-break: break-word;
+        letter-spacing: 4px;
+        text-align: center;
+        border-top: 20px;
+        border: 1px solid white;
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+      #Text5{
+        position: absolute;
+        font-family: 'EB Garamond',sans-serif;
+        top: 2080px;
+        left: 610px;
+        transform: translate(-50%, -50%);
+        color:black;
+        font-size: 25px;
+       /* font-weight:600;*/
+        width: 430px;
+        overflow-wrap: break-word; 
+        word-wrap: break-word; 
+        word-break: break-word;
+        letter-spacing: 3px;
+        text-align: center;
+        line-height: 40px;
+      }
+      #Text6{
+        position: absolute;
+        font-family: 'Roberto',sans-serif ;
+        top: 2210px;
+        left: 610px;
+        transform: translate(-50%, -50%);
+        color:#c3af7d;
+        font-size: 15px;
+        font-weight:600;
+        width: 430px;
+        overflow-wrap: break-word; 
+        word-wrap: break-word; 
+        word-break: break-word;
+        text-align: center;
+      }
+      #Image4{
+        position:absolute; 
+        margin-top: 800px;
+        margin-left: -595px;
+        height: 60px;
+      }
+      .parallax-container-1{
+        position: relative;
+        width: 100vw;
+        height: 190vh; /* Height is set to 150% of viewport height */
+        overflow: hidden;
+      }
+  
+      .parallax-image-1{
+        margin-top: 550px;
+        margin-left: 70px;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 1079px;
+        height: 1090px;
+        /* object-fit:cover; */
+      }
+        #Image5{
+          position: absolute;
+          margin-top: -500px;
+          margin-left:800px;
+          width: 300px;
+        
+      }
+      #Text7{
+        position: absolute;
+        font-family: 'Roberto',sans-serif ;
+        top: 2485px;
+        left: 1100px;
+        transform: translate(-50%, -50%);
+        color:white;
+        font-size: 22px;
+        width: 490px;
+        overflow-wrap: break-word; 
+        word-wrap: break-word; 
+        word-break: break-word;
+        letter-spacing: 17px;
+        line-height: 80px;
+      }
+      #Text8{
+        position: absolute;
+        font-family: 'EB Garamond',sans-serif;
+        top: 2650px;
+        left: 950px;
+        transform: translate(-50%, -50%);
+        color:white;
+        font-size: 19px;
+        /*font-weight:600;*/
+        width: 200px;
+        overflow-wrap: break-word; 
+        word-wrap: break-word; 
+        word-break: break-word;
+        letter-spacing: 4px;
+        text-align: center;
+        line-height: 36px;
+      }
+      #Text9{
+        position: absolute;
+        font-family: 'Roberto',sans-serif ;
+        top: 2750px;
+        left: 950px;
+        transform: translate(-50%, -50%);
+        color:white;
+        font-size: 15px;
+        font-weight:600;
+        width: 215px;
+        overflow-wrap: break-word; 
+        word-wrap: break-word; 
+        word-break: break-word;
+        letter-spacing: 4px;
+        text-align: center;
+        border-top: 20px;
+        border: 1px solid white;
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+      #Text10{
+        position: absolute;
+        font-family: 'Roberto',sans-serif ;
+        color: white;
+        top:40px;
+        left: 120px;
+        font-size: 15px;
+        font-weight:550;
+      }
+      #Text11{
+        position: absolute;
+        font-family: 'Roberto',sans-serif ;
+        color: white;
+        top:65px;
+        left: 118px;
+        font-size: 15px;
+        font-weight:550;    
+      }
+      #Text12{
+        position: absolute;
+        font-family: 'Roberto',sans-serif ;
+        color: white;
+        top:90px;
+        left: 118px;
+        font-size: 15px;
+        font-weight:550;    
+      }
+      #Text13{
+        position: absolute;
+        font-family: 'Roberto',sans-serif ;
+        color: white;
+        top:40px;
+        left: 290px;
+        font-size: 15px;
+        font-weight:550;
+        width: 150px;
+        overflow-wrap: break-word; 
+        word-wrap: break-word; 
+        word-break: break-word;
+        text-align: left;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+        padding-left: 30px;
+        padding-right: 15px;
+        height: 70px;
+        line-height: 25px;
+      }
+      #Text14{
+        position: absolute;
+        font-family: 'Roberto',sans-serif ;
+        color: white;
+        top:40px;
+        left: 510px;
+        font-size: 15px;
+        font-weight:550;
+      }
+      #Text15{
+        position: absolute;
+        font-family: 'Roberto',sans-serif ;
+        color: white;
+        top:80px;
+        left: 770px;
+        font-size: 15px;
+        font-weight:550;
+        border: 1px solid white;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      footer{
+        position:absolute;
+        top: 2980px;
+        background: #af9453; 
+        margin-left: 70px;
+        margin-right: 60px;
+        margin-bottom: 300px;
+        height: 150px;
+        width:1079px;
+      }
+      

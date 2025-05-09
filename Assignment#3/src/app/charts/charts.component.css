@@ -1,0 +1,7 @@
+highcharts-chart
+{
+   width: 100%; 
+   height: 700px;
+   /* position: absolute;  */
+   display: block;
+}

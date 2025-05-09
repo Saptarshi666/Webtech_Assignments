@@ -1,0 +1,88 @@
+
+<div class="container" style="display: flex; flex-direction: column;" *ngIf="isDataLoaded1">
+    <div *ngFor="let item of storedResponses; let i = index"  [style.top.px]="i === 0 ? 190 : (190 + i * (210 + 10))" class="centered-div"  >
+        <div class="header" style = "position:absolute;width: 780px;background-color: #f8f8f8;border-right: 1px solid lightgray; " (click)="handleDivClick(i)">
+            <p class = "Text1" style = "font-size: x-large;font-weight: 600;position: absolute;margin-bottom: 0px;margin-top: 0px;margin-left:30px ;">{{item.stockData.ticker}}</p><p class ="Text2" style="font-weight: 500;position:absolute;margin-bottom: 0px;margin-top: 8px;margin-left: 105px;color: #96958d;">{{item.stockData.name}}</p></div>
+        <div class="body" style="position: absolute;top: 40px;width: 780px;height: 120px; border-bottom: 1px solid lightgray; ">
+            <p class = "Text3" style="margin-top: 10px;margin-left: 10px;"><b>Quantity:</b></p>
+            <p class = "Text4" style="margin-top: -40px;margin-left: 300px;"><b>{{response[i].quantity}}</b></p>
+            <p class = "Text3" style="margin-top: 10px;margin-left: 10px;"><b>Avg Cost/Share:</b></p>
+            <p class = "Text4" style="margin-top: -40px;margin-left: 300px;"><b>{{roundValue(i)}}</b></p>
+            <p class = "Text3" style="margin-top: 10px;margin-left: 10px;"><b>Total Cost:</b></p>
+            <p class = "Text4" style="margin-top: -40px;margin-left: 300px;"><b>{{roundValue1(i)}}</b></p>
+            <p class = "Text5" style="position: absolute;margin-top: -120px;margin-left: 390px;"><b>Change:</b></p>
+            <p class = "Text6"  [ngStyle]="{'color': roundValueColor(i)}"style=" position: absolute;margin-top: -120px;margin-left: 690px;"><b>{{roundValue2(i)}}</b></p>
+            <p class = "Text7" style="position: absolute;margin-top: -80px;margin-left: 390px;"><b>Current Price:</b></p>
+            <p class = "Text8" [ngStyle]="{'color': roundValueColor(i)}" style="position: absolute;margin-top: -80px;margin-left: 690px;"><b>{{roundValue3(i)}}</b></p>
+            <p class = "Text9" style="position: absolute;margin-top: -40px;margin-left: 390px;"><b>Market Value:</b></p>
+            <p class = "Text10" [ngStyle]="{'color': roundValueColor(i)}" style="position: absolute;margin-top: -40px;margin-left: 690px;"><b>{{roundValue4(i)}}</b></p>
+            <img *ngIf="roundValueTest(i)> 0" src="/assets/Images/img/caretup.svg" style="width:20px;margin-left: 670px;margin-top: -240px;" alt="Positive Image">
+            <img *ngIf="roundValueTest(i) < 0" src="/assets/Images/img/caretdown.svg" style="width:20px;margin-left: 670px;margin-top: -240px;"  alt="Negative Image">
+        </div>
+        <div class="footer" style="position: absolute;top:160px;width:780px;height: 40px;background-color:#f8f8f8;border-right: 1px solid lightgray;border-bottom: 1px solid lightgray;"> 
+          <button class="button1" style = "margin-top: 5px;margin-left: 5px;"(click)="openBuyModal(buyModalContent,i)">Buy</button>
+          <button class="button2" style="margin-left: 5px;" (click)="openSellModal(buySellContent,i)">Sell</button>
+        </div>
+    </div>
+    </div>
+<mat-option *ngIf="!isDataLoaded" class="spinner-option">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </mat-option>
+  <div *ngIf="showAlert" [ngClass]="{'alert': colorofalert}">
+    <p style="text-align: center;">Currently you don't have any stock.</p>
+  </div>
+<ng-template #buySellContent let-modal>
+    <div class="modal-header">
+      <span >{{ ticker }} </span>
+      <button type="button" class="close-btn" aria-label="Close" (click)="modal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+        <div class="close-line"></div>
+      </button>
+    </div>
+    <div class="modal-body">
+      <span>Current Price: {{c1}}</span>
+      <br>
+      <span> Money in Wallet: ${{totalmoney1}}</span>
+      <div class="form-group" style="display:flex; flex-direction: row;" >
+        <label for="userInput"  class="col-sm-3 col-form-label">Quantity:</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="userInput1" [(ngModel)]="userInputValue1" (input)="checkWallet1()">
+        </div>
+      </div>
+      <div class = "errortext" *ngIf="isNotEnoughStocks">You cannot sell the stocks you don't have!</div>
+    </div>
+    <div class="modal-footer">
+      <span class ="money"> Total: {{amountsold1}}</span>
+      <button type="button" [ngClass]="{'grayedout': isButtonDisabled, 'Buybutton': !isButtonDisabled}" [disabled]="isButtonDisabled" (click) ="SellNow(userInputValue1)">Sell</button>
+    </div>
+  </ng-template>
+  <ng-template #buyModalContent let-modal>
+    <div class="modal-header">
+      <span >{{ ticker }}</span>
+      <button type="button" class="close-btn" aria-label="Close" (click)="modal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+        <div class="close-line"></div>
+      </button>
+    </div>
+    <div class="modal-body">
+      <span>Current Price: {{c1}}</span>
+      <br>
+      <span> Money in Wallet: ${{totalmoney1}}</span>
+      <div class="form-group" style="display:flex; flex-direction: row;" >
+        <label for="userInput"  class="col-sm-3 col-form-label">Quantity:</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="userInput" [(ngModel)]="userInputValue" (input)="checkWallet()">
+        </div>
+      </div>
+      <div class = "errortext" *ngIf="isNotEnoughMoney">Not enough money in the wallet</div>
+    </div>
+    <div class="modal-footer">
+      <span class ="money"> Total: {{amountbought1}}</span>
+      <button type="button" [ngClass]="{'grayedout': isButtonDisabled, 'Buybutton': !isButtonDisabled}" [disabled]="isButtonDisabled" (click) ="BuyNow(userInputValue)">Buy</button>
+    </div>
+  </ng-template>
+  <h4 class="walletinfo" style="position:absolute;top:150px;left: 240px;"> Money in Wallet: $ {{totalmoney1}}</h4>
+  <h2 class= "Headline" style="position:absolute;top:100px;left: 240px;">My Portfolio</h2>
+  <div *ngIf="showAlert1" [ngClass]="{'alert1': colorofalert1, 'alert2': !colorofalert1}">
+    {{ alertMessage }}
+  </div>

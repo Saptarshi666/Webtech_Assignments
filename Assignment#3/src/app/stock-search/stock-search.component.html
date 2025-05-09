@@ -1,0 +1,26 @@
+<div class="text-center mt-5" *ngIf = "showstocksearch">
+  <p id="Text1">STOCK SEARCH</p>
+  <form class="form-inline mt-3">
+      <div class="input-group">
+          <input type="text" class="form-control" placeholder="Enter stock ticker symbol" [formControl]="searchControl" (keydown.enter)="SearchInput($event)"[matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete" (optionSelected)="SearchInput($event.option.value)" [class.hidden]="!showDropdown">
+           
+            <mat-option *ngIf="loading$ | async" class="spinner-option">
+              <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+            </mat-option>
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{ option }}
+            </mat-option>
+          </mat-autocomplete>
+      <button class="btn btn-primary" type="button" (click)="SearchInput()">
+          <img src='assets/Images/img/search-solid.svg' alt="Search" width="20" height="20">
+      </button>
+      <button class="btn btn-danger" type="button">
+          <img class="cancel-btn" src='assets/Images/img/times-solid.svg' alt="Cancel" width="20" height="20" (click) ="Cancel()">
+      </button>
+    </div>
+  </form>
+  <div *ngIf="showAlert" class = "error">
+    No data found please enter a Valid ticker
+  </div>
+</div>

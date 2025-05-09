@@ -1,0 +1,27 @@
+<p class = "Text1" style="text-align: center;"> Insider Sentiments</p>
+<div class= "insights">
+<div class = "table-group" style="text-align: center;">
+<table mat-table [dataSource]="dataSource">
+    <!-- Column definitions -->
+    <ng-container matColumnDef="rowHeader">
+      <th mat-header-cell *matHeaderCellDef class="header-cell" role="rowheader">{{stock_ticker}}</th>
+      <td mat-cell *matCellDef="let element" class="row-header" style = "font-weight: 500;">{{element.rowHeader}}</td>
+    </ng-container>
+    <ng-container matColumnDef="column1">
+      <th mat-header-cell *matHeaderCellDef class="header-cell">MSPR</th>
+      <td mat-cell *matCellDef="let element">{{element.column1}}</td>
+    </ng-container>
+    <ng-container matColumnDef="column2">
+      <th mat-header-cell *matHeaderCellDef class="header-cell">Change</th>
+      <td mat-cell *matCellDef="let element">{{element.column2}}</td>
+    </ng-container>
+    
+    <!-- Row definitions -->
+    <tr mat-header-row *matHeaderRowDef="[ 'rowHeader', 'column1', 'column2']"></tr>
+    <tr mat-row *matRowDef="let row; columns: [ 'rowHeader', 'column1', 'column2'];"></tr>
+    <tr mat-row *matRowDef="let row; columns: [ 'rowHeader', 'column1', 'column2'];" ></tr>
+  </table>
+</div>
+<div id ="recomchart" style=" position:absolute;height: 403px; width: 440px;margin-top:755px;left:135px"></div>
+<div id = "historicaleps"  style=" position:absolute;height: 400px; width: 500px;margin-top:755px;left:595px"></div>
+</div>
